@@ -68,18 +68,6 @@ function handleMouseOut() {
 
 window.onload = function() {
     //task3
-    /*const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-    const maxDigitCookie = cookies.find(cookie => cookie.startsWith('maxDigit='));
-
-    if (maxDigitCookie) {
-        const maxDigit = maxDigitCookie.split('=')[1];
-        alert(`Збережене значення в cookies: Максимальна цифра - ${maxDigit}`);
-
-        if (confirm('Натисніть "OK", щоб видалити cookies')) {
-            deleteCookies();
-        }
-    }*/
-
     const cookies = document.cookie;
     if(cookies.includes('maxDigit')) {
         const maxDigitCookie = parseInt(cookies.split('; ').find(row => row.startsWith('maxDigit')).split('=')[1]);
