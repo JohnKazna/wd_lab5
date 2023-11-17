@@ -39,6 +39,11 @@ const findMaxDigitHandler = () => {
     alert(`Максимальна цифра у числі ${inputValue} - ${maxDigit}`);
 }
 
+function deleteCookies(){
+    document.cookie = 'maxDigit=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    location.reload(); 
+}
+
 //task4
 function setAlignment(value) {
     var blocksToAlign = [document.getElementById('block2'), document.getElementById('block4'), document.getElementById('block5')];
@@ -61,14 +66,9 @@ function handleMouseOut() {
     setAlignment(selectedAlignment);
 }
 
-function deleteCookies(){
-    document.cookie = 'maxDigit=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    location.reload(); 
-}
-
 window.onload = function() {
     //task3
-    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+    /*const cookies = document.cookie.split(';').map(cookie => cookie.trim());
     const maxDigitCookie = cookies.find(cookie => cookie.startsWith('maxDigit='));
 
     if (maxDigitCookie) {
@@ -77,6 +77,20 @@ window.onload = function() {
 
         if (confirm('Натисніть "OK", щоб видалити cookies')) {
             deleteCookies();
+        }
+    }*/
+
+    const cookies = document.cookie;
+    if(cookies.includes('maxDigit')) {
+        const maxDigitCookie = parseInt(cookies.split('; ').find(row => row.startsWith('maxDigit')).split('=')[1]);
+
+        if(maxDigitCookie){
+            alert(`Збережене значення в cookies: Максимальна цифра - ${maxDigitCookie}`);
+
+            if(confirm('Натисніть "OK", щоб видалити cookies')){
+                document.cookie = 'maxDigit=0';
+                location.reload();
+            }
         }
     }
 
