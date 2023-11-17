@@ -75,6 +75,8 @@ main {
 
 .aside-right-top {
     background-color: #fde9d9;
+    display: grid;
+    justify-items: right;
 }
 
 .aside-right-bottom {
@@ -110,4 +112,9 @@ footer h3 {
 .result div {
     display: flex;
     flex-direction: column;
+}
+
+.block5 {
+    display: grid;
+    justify-items: center;
 }

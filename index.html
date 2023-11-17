@@ -16,32 +16,47 @@
             </div>
         </header>
     
-        <main>
-            <aside class="aside-left">
-                <a href="index.html">Flex page</a>
-            </aside>
+        <main onmouseout="handleMouseOut()">
+            <aside class="aside-left" id="block2">
+                <form id="alignmentForm">
+                    <input type="radio" id="alignLeft" name="alignment" value="left">
+                    <label for="alignLeft">Left</label>
+                    
+                    <input type="radio" id="alignCenter" name="alignment" value="center">
+                    <label for="alignCenter">Center</label>
+                    
+                    <input type="radio" id="alignRight" name="alignment" value="right">
+                    <label for="alignRight">Right</label>
+                </form>            </aside>
     
             <section class="middle-section">
                 <aside id="block3">
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos optio assumenda eius?</p>
                 </aside>
-                <div>
+                <div class="block5" id="block5">
                     <div class="result">
                         <h4>Calculation of the circle area</h4>
                         <div>
-                            <label">Write Width</label>
-                            <input type="number" id="inputSide1">
-                            <label">Write Height</label>
-                            <input type="number" id="inputSide2">
+                            <label>Write Width</label>
+                            <input type="number" id="width">
+                            <label>Write Height</label>
+                            <input type="number" id="height">
+                            <p id="areaResult">Area: 0</p>
                         </div>
-                        <button onclick="onClickCircleHandler()">Result</button>
-                        <div class="resultCircleText"></div>
+                        <button onclick="areaButtonClick()" id="areaButton">Result</button>
                     </div>         
+                    <div class="result">
+                        <div>
+                            <label>Введіть натуральне число:</label>
+                            <input type="number" id="numberInput">
+                            <button onclick="findMaxDigitHandler()" id="findMaxButton">Знайти максимальну цифру</button>
+                        </div>
+                    </div>
                 </div>
             </section>
     
             <aside class="aside-right">
-                <section class="aside-right-top">
+                <section class="aside-right-top" id="block4">
                     <p>text1</p>
                 </section>
     
