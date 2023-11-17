@@ -63,7 +63,7 @@ function handleMouseOut() {
 
 function deleteCookies(){
     document.cookie = 'maxDigit=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-    location.reload(); // Перезавантажуємо сторінку
+    location.reload(); 
 }
 
 window.onload = function() {
@@ -77,8 +77,6 @@ window.onload = function() {
 
         if (confirm('Натисніть "OK", щоб видалити cookies')) {
             deleteCookies();
-        } else {
-            window.onbeforeunload = null;
         }
     }
 
@@ -95,6 +93,3 @@ window.onload = function() {
         setAlignment(savedAlignment);
     }
 }
-
-
-  
