@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var block3 = document.getElementById('block3');
-    var block6 = document.getElementById('block6');
+    var block3Element = document.getElementById('block3');
+    var block6Element = document.getElementById('block6');
 
-    var block3 = block3.inner;
-    var block6 = block6.inner;
+    var block3HTML = block3Element.innerHTML;
+    var block6HTML = block6Element.innerHTML;
 
-    block3.inner = block6;
-    block6.inner = block3;
+    block3Element.innerHTML = block6HTML;
+    block6Element.innerHTML = block3HTML;
 });
   
 //task2
